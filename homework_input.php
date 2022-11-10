@@ -225,7 +225,7 @@ $exampleData = [
         ],
         [
             'nev' => 'matematika',
-            'tipus' => 'közép',
+            'tipus' => 'emelt',
             'eredmeny' => '90%',
         ],
         [
