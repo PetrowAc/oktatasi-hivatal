@@ -13,7 +13,7 @@ class ScoreCalculation {
         $this->matriResults = $this->exampleData['erettsegi-eredmenyek'];
         $this->extraPoints = $this->exampleData['tobbletpontok'];
 
-        //Kötelező tárgyak meglételének illetve eredményeinek ellenőrzése
+        //Kötelező tárgyak meglétének illetve eredményeinek ellenőrzése
         $status = 0;
         foreach ($this->matriResults as $key => $value) {
             if($value['nev'] == 'magyar nyelv és irodalom' || $value['nev'] == 'történelem' || $value['nev'] == 'matematika') {
@@ -182,6 +182,7 @@ class ScoreCalculation {
                 }
             }
 
+            //Pontszám hozzáadás a nyelvvizsga szintjétől fűggően
             $langBonus = 0;
             foreach ($this->extraPoints as $key => $value) {
                 switch ($value['tipus']) {
@@ -194,7 +195,7 @@ class ScoreCalculation {
                         break;
                     
                     default:
-                        return 'Hiba, ismeretlen tipusú nyelvvizsga!';
+                        return 'Hiba, ismeretlen típusú nyelvvizsga!';
                         break;
                 }
             }
